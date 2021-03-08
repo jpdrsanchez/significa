@@ -1,0 +1,132 @@
+.projetos {
+  padding-top: 1.875rem;
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.75rem;
+    &::before {
+      content: '';
+      display: block;
+      max-width: 10.625rem;
+      width: 100%;
+      height: 1.125rem;
+      background: var(--orange);
+      margin-right: 2.5rem;
+    }
+  }
+
+  &__wrapper {
+    padding-top: 7rem;
+    padding-bottom: 10.3125rem;
+
+    @include media-up(medium-up) {
+      background: url('./images/projetos/projeto-bg.svg') no-repeat center top;
+    }
+  }
+
+  &__row {
+    display: grid;
+    position: relative;
+
+    @include media-up(medium-up) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    & > * {
+      &:nth-child(1) {
+        text-align: right;
+      }
+    }
+
+    &::after {
+      @include media-up(medium-up) {
+        content: '';
+        display: block;
+        width: 5rem;
+        height: 1.125rem;
+        background: var(--orange);
+        position: absolute;
+        left: 50%;
+        top: 1.375rem;
+        transform: translateX(-50%);
+      }
+
+      @include media-up(large-up) {
+        width: 7rem;
+      }
+
+      @include media-up(x-large-up) {
+        width: 10rem;
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 3.75rem;
+
+      @include media-up(medium-up) {
+        margin-bottom: 7.5rem;
+      }
+    }
+
+    & > * {
+      &:nth-child(1) {
+        @include media-up(medium-up) {
+          grid-column: 1 / 6;
+        }
+      }
+
+      &:nth-child(2) {
+        @include media-up(medium-up) {
+          grid-column: 8 / 13;
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 16.875rem;
+
+    @include media-down(medium-down) {
+      grid-row: 2;
+      margin-top: 1.875rem;
+    }
+
+    @include media-up(large-up) {
+      height: 22.5rem;
+    }
+
+    @include media-up(x-large-up) {
+      height: 25rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    @include media-down(medium-down) {
+      text-align: center !important;
+    }
+  }
+
+  &__row-title {
+    margin-bottom: 1.5rem;
+
+    @include media-down(large-down) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__list {
+    & + p {
+      margin-top: 1.875rem;
+    }
+  }
+}

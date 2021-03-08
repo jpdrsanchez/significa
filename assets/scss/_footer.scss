@@ -1,0 +1,130 @@
+.footer {
+  &__container {
+    padding-top: 3.75rem;
+    padding-bottom: 1.25rem;
+    display: grid;
+    gap: 1.875rem;
+    border-bottom: 0.0625rem solid var(--orange);
+
+    @include media-up(medium-up) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__content {
+    @include media-up(medium-up) {
+      grid-column: 1 / 8;
+    }
+  }
+
+  &__info {
+    @include media-up(medium-up) {
+      grid-column: 8 / 13;
+    }
+  }
+
+  &__logo {
+    display: block;
+    max-width: 10.875rem;
+    margin-bottom: 1.125rem;
+
+    @include media-down(medium-down) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__text {
+    letter-spacing: -0.02em;
+    line-height: 2.37;
+    max-width: 33.125rem;
+
+    @include media-down(medium-down) {
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &__info {
+    text-align: right;
+
+    @include media-down(medium-down) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.67;
+    margin-bottom: 0.0625rem;
+  }
+
+  &__list {
+    margin-bottom: 1.25rem;
+  }
+
+  &__item {
+    line-height: 1.87;
+    letter-spacing: -0.02em;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include media-down(medium-down) {
+      justify-content: center;
+    }
+  }
+
+  &__social-item {
+    &:not(:last-child) {
+      margin-right: 0.625rem;
+    }
+  }
+
+  &__social-link {
+    font-size: 1.375rem;
+  }
+
+  &__copy {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include media-up(medium-up) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-text {
+      font-size: 0.875rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+
+      @include media-down(medium-down) {
+        text-align: center;
+        margin-bottom: 0.75rem;
+      }
+    }
+  }
+
+  &__noweb {
+    font-size: 0.875rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    display: flex;
+
+    @include media-down(medium-down) {
+      justify-content: center;
+    }
+
+    img {
+      max-width: 1.625rem;
+      margin-left: 0.3125rem;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.localizacao {
+  padding-top: 3.75rem;
+
+  @include media-down(medium-down) {
+    padding-bottom: 3.75rem;
+  }
+
+  @include media-up(medium-up) {
+    margin-bottom: -7.5rem;
+  }
+
+  &__container {
+    display: grid;
+
+    @include media-up(medium-up) {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.875rem;
+    }
+  }
+
+  &__content {
+    text-align: center;
+
+    @include media-down(medium-down) {
+      margin-bottom: 1.875rem;
+    }
+
+    @include media-up(medium-up) {
+      grid-column: 1 / 5;
+      text-align: right;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+    position: relative;
+    &::after {
+      @include media-up(medium-up) {
+        content: '';
+        display: block;
+        width: 10.625rem;
+        height: 1.125rem;
+        background: var(--orange);
+        position: absolute;
+        right: -12.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 900;
+      }
+    }
+  }
+
+  &__map {
+    height: 20.625rem;
+    @include media-up(medium-up) {
+      grid-column: 5 / 13;
+      padding-left: 1.5rem;
+      height: 39.625rem;
+      position: relative;
+      top: -11.25rem;
+    }
+  }
+}

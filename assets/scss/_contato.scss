@@ -1,0 +1,193 @@
+.contato {
+  padding-top: 3.75rem;
+  padding-bottom: -7.5rem;
+
+  @include media-down(large-down) {
+    padding-bottom: 3.75rem;
+  }
+
+  &__container {
+    display: grid;
+    gap: 1.875rem;
+
+    @include media-down(large-down) {
+      text-align: center;
+    }
+
+    @include media-up(large-up) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__content {
+    @include media-up(large-up) {
+      text-align: right;
+      grid-column: 1 / 6;
+      padding-right: 1.75rem;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 1.5rem;
+    &::after {
+      @include media-up(large-up) {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -6rem;
+        width: 3.75rem;
+        height: 1.125rem;
+        background: var(--orange);
+        transform: translateY(-50%);
+        z-index: 900;
+      }
+    }
+  }
+
+  &__form {
+    position: relative;
+    background: var(--white);
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 1.875rem;
+
+    @include media-up(small-up) {
+      box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.05);
+      padding: 4rem 5rem 3.75rem;
+    }
+
+    @include media-up(large-up) {
+      grid-column: 6 / 13;
+      top: -11.25rem;
+    }
+  }
+
+  &__input {
+    position: relative;
+    margin-bottom: 1.625rem;
+
+    input {
+      display: block;
+      width: 100%;
+      border: 0.125rem solid var(--form-grey);
+      padding: 1.5rem 2rem;
+      border-radius: 0.3125rem;
+      font-family: var(--form-font);
+      font-size: 1.125rem;
+      color: var(--orange);
+
+      &.active {
+        border-color: var(--orange);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: var(--orange);
+
+        & + label {
+          top: calc(-22px / 2);
+          transform: none;
+          left: 1rem;
+          padding: 0.125rem 1rem;
+          background: var(--white);
+          color: var(--orange);
+        }
+      }
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      border: 0.125rem solid var(--form-grey);
+      padding: 1.5rem 2rem;
+      border-radius: 0.3125rem;
+      font-family: var(--form-font);
+      font-size: 1.125rem;
+      resize: none;
+      color: var(--orange);
+      height: 12.75rem;
+
+      & + label {
+        top: 1.5rem;
+        transform: none;
+      }
+
+      &.active {
+        border-color: var(--orange);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: var(--orange);
+
+        & + label {
+          top: calc(-22px / 2);
+          transform: none;
+          left: 1rem;
+          padding: 0.125rem 1rem;
+          background: var(--white);
+          color: var(--orange);
+        }
+      }
+    }
+
+    select {
+      display: block;
+      width: 100%;
+      border: 0.125rem solid var(--form-grey);
+      padding: 1.5rem 2rem;
+      border-radius: 0.3125rem;
+      font-family: var(--form-font);
+      font-size: 1.125rem;
+      color: var(--grey);
+      appearance: none;
+      background: url('./images/chevron-down.svg') no-repeat center right
+        1.625rem;
+
+      &:focus {
+        outline: none;
+      }
+
+      &.active {
+        border-color: var(--orange);
+        color: var(--orange);
+        background: url('./images/chevron-down-orange.svg') no-repeat center
+          right 1.625rem;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 2rem;
+      font-family: var(--form-font);
+      font-size: 1.125rem;
+      color: var(--grey);
+      transform: translateY(-50%);
+      cursor: text;
+      transition: all 0.3s;
+
+      &.active {
+        top: calc(-22px / 2);
+        transform: none;
+        left: 1rem;
+        padding: 0.125rem 1rem;
+        background: var(--white);
+        color: var(--orange);
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 1.1875rem 1rem 1.125rem;
+    background: none;
+    font-family: var(--title-font);
+    font-size: 1.125rem;
+    text-align: center;
+    color: var(--black);
+    border: 0.125rem solid currentColor;
+  }
+}
