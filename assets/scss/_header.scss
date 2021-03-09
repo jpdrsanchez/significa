@@ -16,5 +16,13 @@
 
   &__logo {
     width: 10.9375rem;
+    position: relative;
+    z-index: 1000;
+    transition: all 0.3s;
+
+    &.active {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

@@ -35,17 +35,28 @@
     margin-bottom: 1.5rem;
     position: relative;
     &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      height: 1.125rem;
+      background-color: var(--orange);
+      z-index: 900;
+
+      @include media-down(small-down) {
+        left: -100%;
+        width: 100%;
+      }
+
+      @include media-between(small-up, medium-down) {
+        left: -100%;
+        width: calc(100% + 2.5rem);
+      }
+
       @include media-up(medium-up) {
-        content: '';
-        display: block;
         width: 10.625rem;
-        height: 1.125rem;
-        background: var(--orange);
-        position: absolute;
         right: -12.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 900;
       }
     }
   }

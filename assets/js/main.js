@@ -13,6 +13,9 @@ initRatio();
 import initImageModal from './modules/imageModal';
 initImageModal();
 
+import initCurrentPage from './modules/currentPage';
+initCurrentPage();
+
 import VMasker from 'vanilla-masker';
 const inputCEP = document.querySelector('[data-mask="cep"]');
 const inputTel = document.querySelector('[data-mask="tel"]');

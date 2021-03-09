@@ -1,12 +1,14 @@
 const initMenuMobile = () => {
   const menuButton = document.querySelector('[data-mobile="button"]');
   const menuBody = document.querySelector('[data-mobile="menu"]');
+  const menuLogo = document.querySelector('[data-logo]');
 
   if (menuButton && menuBody) {
     const handleOpen = (event) => {
       event.preventDefault();
       menuBody.classList.toggle('active');
       menuButton.classList.toggle('active');
+      menuLogo.classList.toggle('active');
       document.body.classList.toggle('no-overflow');
     };
 
@@ -18,6 +20,7 @@ const initMenuMobile = () => {
       ) {
         menuBody.classList.remove('active');
         menuButton.classList.remove('active');
+        menuLogo.classList.remove('active');
         document.body.classList.remove('no-overflow');
       }
     };

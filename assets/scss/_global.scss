@@ -39,7 +39,7 @@ body {
 }
 
 a {
-  color: var(--black);
+  color: var(--orange);
   text-decoration: none;
 }
 
@@ -99,6 +99,7 @@ button {
   font-size: 1.125rem;
   line-height: 2.11;
   letter-spacing: -0.02em;
+  font-weight: 100;
 }
 
 .button {
@@ -112,6 +113,11 @@ button {
   color: var(--black);
   font-family: var(--title-font);
   text-align: center;
+  transition: all 0.3s;
+
+  &:hover {
+    color: var(--orange);
+  }
 
   &--white {
     color: var(--white);
@@ -150,19 +156,19 @@ button {
 
 .page-intro {
   padding-top: 18.75rem;
-  height: 34rem;
+  height: 36rem;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url('./images/home/slider-image.jpg') no-repeat center center;
   background-size: cover;
-
-  @include media-up(large-up) {
-    padding-left: 18.25rem;
-  }
 
   &__content {
     display: flex;
     position: relative;
     color: var(--white);
+    justify-content: center;
+    width: max-content;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   &__title {
