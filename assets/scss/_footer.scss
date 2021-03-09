@@ -58,14 +58,16 @@
 
   &__title {
     font-size: 1.125rem;
-    font-weight: 700;
+    font-family: var(--title-font);
     letter-spacing: -0.02em;
     line-height: 1.67;
-    margin-bottom: 0.0625rem;
+    margin-bottom: 0.125rem;
   }
 
   &__list {
     margin-bottom: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.87;
   }
 
   &__item {
