@@ -11,6 +11,8 @@ const initCurrentPage = () => {
 
       link.classList.remove('active');
       if (linkHref === currentPage) link.classList.add('active');
+      else if (!currentPage.length && linkHref === 'index.html')
+        link.classList.add('active');
     });
   }
 };
